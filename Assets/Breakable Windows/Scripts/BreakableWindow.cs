@@ -134,8 +134,8 @@ public class BreakableWindow : MonoBehaviour {
         obj.transform.rotation = transform.rotation;
         obj.layer = layer.value;
         obj.name = "Glass Splinter";
-        if (destroySplintersTime > 0)
-            Destroy(obj, destroySplintersTime);
+        //if (destroySplintersTime > 0)
+           // Destroy(obj, destroySplintersTime);
 
 
         if (preCalculate == true)
@@ -236,18 +236,21 @@ public class BreakableWindow : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (useCollision == true)
+        if (col.gameObject.CompareTag("PowerObject"))
         {
-            if (health > 0)
+            if (useCollision == true)
             {
-                health -= col.impulse.magnitude;
-                if (health < 0)
+                if (health > 0)
                 {
-                    health = 0;
-                    breakWindow();
+                    health -= col.impulse.magnitude;
+                    if (health < 0)
+                    {
+                        health = 0;
+                        breakWindow();
+                    }
                 }
+                else breakWindow();
             }
-            else breakWindow();
-        }        
+        }
     }
 }

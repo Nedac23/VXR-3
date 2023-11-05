@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SamplesInfoPanel
   - Floor
+  - RoomLight
+  - PowerObject
   layers:
   - Default
   - TransparentFX
