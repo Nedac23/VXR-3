@@ -75111,7 +75111,7 @@ MonoBehaviour:
   poses:
   - {fileID: 1518674741}
   orb: {fileID: 5596274044691354949, guid: 9e80cf97fb8386a47822546549bd8a41, type: 3}
-  orb_target: {fileID: 0}
+  orb_target: {fileID: 6881809920510137144}
 --- !u!4 &1863949197
 Transform:
   m_ObjectHideFlags: 0
@@ -87792,6 +87792,11 @@ MonoBehaviour:
 --- !u!1 &6351792518368204344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7677802663300059864, guid: cb23db982353d4b4f98498079c8d215d, type: 3}
+  m_PrefabInstance: {fileID: 6948315518745793643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6881809920510137144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 163059137226584958, guid: cb23db982353d4b4f98498079c8d215d, type: 3}
   m_PrefabInstance: {fileID: 6948315518745793643}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6948315518745793643
