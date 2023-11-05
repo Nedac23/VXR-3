@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Alarm_Timer_Activator : MonoBehaviour
+{
+    private GameObject window;
+    private BreakableWindow bool_script;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        window = GameObject.FindWithTag("Window");
+        bool_script = window.GetComponent<BreakableWindow>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (bool_script.windowBreak == true)
+        {
+            GetComponent<Timer>().enabled = true;
+            bool_script.windowBreak = false;
+        }
+    }
+}
