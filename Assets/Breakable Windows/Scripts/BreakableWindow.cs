@@ -134,8 +134,8 @@ public class BreakableWindow : MonoBehaviour {
         obj.transform.rotation = transform.rotation;
         obj.layer = layer.value;
         obj.name = "Glass Splinter";
-        //if (destroySplintersTime > 0)
-           // Destroy(obj, destroySplintersTime);
+        if (destroySplintersTime > 0)
+           Destroy(obj, destroySplintersTime);
 
 
         if (preCalculate == true)
@@ -157,7 +157,7 @@ public class BreakableWindow : MonoBehaviour {
         Rigidbody rigid = obj.AddComponent<Rigidbody>();
         rigid.centerOfMass = (v[0] + v[1] + v[2]) / 3f;
         if (addTorques && preCalculate == false) rigid.AddTorque(new Vector3(Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50));
-        if (destroyPhysicsTime > 0) Destroy(rigid, destroyPhysicsTime);
+        //if (destroyPhysicsTime > 0) Destroy(rigid, destroyPhysicsTime);
 
         MeshRenderer mr = obj.AddComponent<MeshRenderer>();
         mr.materials = GetComponent<Renderer>().materials;

@@ -2969,6 +2969,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 416390, guid: c76d2d3504ddb4847940a815cad04644, type: 3}
   m_PrefabInstance: {fileID: 66896334}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &67366514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6767824107855863177, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+  m_PrefabInstance: {fileID: 819188233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &67661800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31693,12 +31704,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2702404661366978019, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: _externalVelocityInfluence
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3309180981671549376, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
       propertyPath: m_Name
       value: OculusInteractionSampleRig
       objectReference: {fileID: 0}
+    - target: {fileID: 3462195755778502066, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: field of view
+      value: 26.991467
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462195755778502066, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462195755789847466, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: resetTrackerOnLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3462195755789847466, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
       propertyPath: _trackingOriginType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3732262558726648168, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599590784636899941, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: _interactors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599590784636899941, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: _interactors.Array.data[1]
+      value: 
+      objectReference: {fileID: 67366514}
+    - target: {fileID: 6892869811645382147, guid: 4bd8b83846634c74ab6e5a3cbdf0a865, type: 3}
+      propertyPath: _externalVelocityInfluence
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
