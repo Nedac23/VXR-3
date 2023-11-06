@@ -8,6 +8,9 @@ TagManager:
   - Floor
   - RoomLight
   - PowerObject
+  - Window
+  - AlarmLights
+  - AlarmLights1
   layers:
   - Default
   - TransparentFX
