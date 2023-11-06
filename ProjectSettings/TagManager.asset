@@ -11,6 +11,7 @@ TagManager:
   - Window
   - AlarmLights
   - AlarmLights1
+  - Brick
   layers:
   - Default
   - TransparentFX

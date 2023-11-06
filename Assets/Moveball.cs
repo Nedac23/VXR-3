@@ -22,13 +22,13 @@ public class Moveball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
+       // if (collision.gameObject.CompareTag("Floor"))
+       // {
 
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,1.0f);
            
 
-        }
+       // }
 
     }
  

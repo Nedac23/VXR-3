@@ -15,15 +15,16 @@ public class Solider_Movement_A : MonoBehaviour
     [SerializeField] float followdistance = .5f;
     bool stand = false;
     private Animator anim;
-    private CapsuleCollider coll;
+    private BoxCollider coll;
     bool turn = false;
     bool death = false;
     private Rigidbody rb;
     [SerializeField] BoxCollider playercollider;
     [SerializeField] AudioSource Deathsound;
+    [SerializeField] AudioSource Shootsound;
     [SerializeField] int Hitpoints;
     private int hitcount = 0;
-    [SerializeField] CapsuleCollider weaponcoll;
+    //[SerializeField] CapsuleCollider weaponcoll;
     [SerializeField] float waittime;
     private float numupdate = 0;
 
@@ -34,8 +35,8 @@ public class Solider_Movement_A : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        coll = GetComponent<CapsuleCollider>();
-        weaponcoll = GetComponent<CapsuleCollider>();
+        coll = GetComponent<BoxCollider>();
+       // weaponcoll = GetComponent<CapsuleCollider>();
         //anim.SetBool("Die", true);
 
     }
@@ -48,7 +49,7 @@ public class Solider_Movement_A : MonoBehaviour
         {
 
             //Moves the empty game object target to the position of the Head objecty with a Y similar to the NPC to avoid odd rotations
-            target.transform.position = new Vector3(head.transform.position.x, 1, head.transform.position.z);
+            target.transform.position = new Vector3(head.transform.position.x, 0, head.transform.position.z);
 
             if (Vector3.Distance(transform.position, target.transform.position) < followdistance)
             {
@@ -56,6 +57,9 @@ public class Solider_Movement_A : MonoBehaviour
                 turn = true;
                 //zero Y vector
                 Vector3 targetDirection = target.transform.position - transform.position;
+
+                //This vector will take the NPC position and bump it up to avoid floor collision
+                Vector3 MoveUPVector = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
 
                 //Rotation
                 //speed variable
@@ -69,7 +73,7 @@ public class Solider_Movement_A : MonoBehaviour
 
                 //Raycasting
                 RaycastHit hit;
-                Ray ray = new Ray(transform.position, transform.forward);
+                Ray ray = new Ray(MoveUPVector, transform.forward);
                 Debug.DrawRay(transform.position, transform.forward, Color.green);
                 if (Physics.Raycast(ray, out hit))
                 {
@@ -78,8 +82,15 @@ public class Solider_Movement_A : MonoBehaviour
                         // Debug.Log("Ray hit player");
                         if (Vector3.Distance(transform.position, target.transform.position) < attackdistance)
                         {
+                            
                             anim.SetBool("Aiming", true);
-                           
+                            
+                          // if(!Shootsound.isPlaying  && death == false)
+                            //{
+                               // Shootsound.Play();
+                            //}
+                            
+
                         }
 
                     }
@@ -92,14 +103,34 @@ public class Solider_Movement_A : MonoBehaviour
             {
                 anim.SetBool("Aiming", false);
                 turn = false;
+               // Shootsound.Stop();
             }
             if (anim.GetBool("Aiming") == false && turn == false)
             {
 
 
-
+               // Shootsound.Stop();
                 WaypointFollower2();
             }
+        }
+
+        if(anim.GetBool("Aiming") == true)
+        {
+            if(Shootsound.isPlaying)
+            {
+                if(anim.GetBool("Death") == true)
+                {
+                    Shootsound.Pause();
+                }
+            }
+            else
+            {
+                Shootsound.Play();
+            }
+        }
+        else
+        {
+            Shootsound.Pause();
         }
 
 
@@ -108,13 +139,14 @@ public class Solider_Movement_A : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Fireball"))
+        if (collision.gameObject.CompareTag("PowerObject"))
         {
             hitcount++;
             if (hitcount >= Hitpoints)
             {
-                weaponcoll.enabled = false;
-                anim.SetBool("Die", true);
+                //weaponcoll.enabled = false;
+                anim.SetBool("Dead", true);
+                Shootsound.enabled = false;
                 death = true;
                 coll.enabled = false;
 
