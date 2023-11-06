@@ -12,6 +12,9 @@ TagManager:
   - AlarmLights
   - AlarmLights1
   - Brick
+  - TV
+  - Exit
+  - TimerCue
   layers:
   - Default
   - TransparentFX

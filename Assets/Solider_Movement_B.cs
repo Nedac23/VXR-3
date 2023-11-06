@@ -20,13 +20,16 @@ public class Solider_Movement_B : MonoBehaviour
     bool death = false;
     private Rigidbody rb;
     [SerializeField] BoxCollider playercollider;
-    [SerializeField] AudioSource Deathsound;
+   // [SerializeField] AudioSource Deathsound;
     [SerializeField] int Hitpoints;
     private int hitcount = 0;
-    [SerializeField] CapsuleCollider weaponcoll;
+   // [SerializeField] CapsuleCollider weaponcoll;
     [SerializeField] float waittime;
     private float numupdate = 0;
     bool GlassBroken = false;
+
+    private GameObject window;
+    private BreakableWindow bool_script;
 
 
     // Start is called before the first frame update
@@ -35,7 +38,9 @@ public class Solider_Movement_B : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<CapsuleCollider>();
-        weaponcoll = GetComponent<CapsuleCollider>();
+       // weaponcoll = GetComponent<CapsuleCollider>();
+        window = GameObject.FindWithTag("Window");
+        bool_script = window.GetComponent<BreakableWindow>();
         //anim.SetBool("Die", true);
 
     }
@@ -43,7 +48,7 @@ public class Solider_Movement_B : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*
         RaycastHit hit;
         Physics.Linecast(transform.position, head.transform.position, out hit);
         Debug.DrawLine(transform.position, head.transform.position);
@@ -62,7 +67,13 @@ public class Solider_Movement_B : MonoBehaviour
             {
                 WaypointFollower();
             }
-        
+        */
+
+       if( bool_script.windowBreak == true)
+        {
+            anim.SetBool("Glass", true);
+            WaypointFollower();
+        }
 
 
     }
@@ -75,12 +86,12 @@ public class Solider_Movement_B : MonoBehaviour
             hitcount++;
             if (hitcount >= Hitpoints)
             {
-                weaponcoll.enabled = false;
+               // weaponcoll.enabled = false;
                 anim.SetBool("Die", true);
                 death = true;
                 coll.enabled = false;
 
-                Deathsound.PlayDelayed(0);
+               // Deathsound.PlayDelayed(0);
             }
 
         }

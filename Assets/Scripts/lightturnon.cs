@@ -6,6 +6,8 @@ public class lightturnon : MonoBehaviour
 {
     private GameObject window;
     private BreakableWindow bool_script;
+    private GameObject timer;
+    private TimerCue timer_script;
     private bool playsound;
 
     // Start is called before the first frame update
@@ -14,6 +16,8 @@ public class lightturnon : MonoBehaviour
         //bool_script.windowBreak = false;
         window = GameObject.FindWithTag("Window");
         bool_script = window.GetComponent<BreakableWindow>();
+        timer = GameObject.FindWithTag("TimerCue");
+        timer_script = timer.GetComponent<TimerCue>();
     }
 
     // Update is called once per frame
@@ -23,9 +27,9 @@ public class lightturnon : MonoBehaviour
         {
             GetComponent<Light>().enabled = true;
             GetComponent<Animator>().enabled = true;
-            if (GetComponent<AudioSource>().isPlaying == false)
+            if (GetComponent<AudioSource>().isPlaying == false && timer_script.stoppedAudio == false)
             {
-                GetComponent<AudioSource>().PlayDelayed(2f);
+                GetComponent<AudioSource>().Play();
             }
             //GetComponent<AudioSource>().Play();
         }
