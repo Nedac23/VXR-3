@@ -1,1 +1,4 @@
 # VXR-3
+## This is a Virtual Reality environment created for the Oculus Quest 2 for a VXR Development class at MSU.
+
+The walls around you feel cold to the touch. Metal and brick surround you, and everything your eyes can see is monitored by government personnel. Scientists walk around you, reading monitors and taking samples in their government-issued protective suits. They all seem to be too busy to notice your condition. It's getting hard to breathe. It's getting hard to survive. The bright lights burn your skin, and make it impossible to sleep. You will not make it much longer in this laboratory prison. You need to find a way out. Suddenly, a small cube drops into your chamber. Just another test the humans plan on running, but maybe it could be a means of escape. Will you face the full power of the government lab? Will you break free?
