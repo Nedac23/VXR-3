@@ -46,6 +46,10 @@ public class BreakableWindow : MonoBehaviour {
     private bool allreadyCalculated = false;
     private GameObject splinterParent;
     int[] tris;
+    public bool windowBreak = false;
+    private GameObject alarmLights;
+    private Animator alarmAnimator;
+    private Light alarmLight;
 
     void Start()
     {
@@ -236,6 +240,7 @@ public class BreakableWindow : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
+        windowBreak = true;
         if (col.gameObject.CompareTag("PowerObject"))
         {
             if (useCollision == true)
