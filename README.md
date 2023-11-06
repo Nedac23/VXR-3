@@ -7,6 +7,6 @@ The environment utilizes the Quest 2/3 built-in hand-tracking functions to simul
 ### Goal of the game:
 You have been trapped in a facility and must escape. However, the organization that contained you knows how much of a threat you could potentially be to their plans. By breaching your containment, you will begin a timer that leads to the activation of a nuclear device thus destroying both you and all evidence of their site. You must escape the facility by breaching the weak points of the building while avoiding fleeing scientists and locating your ship.
 ### Developer Roles:
-Caden Thompson - Created the hand tracking features as well as the teleportation, "blaster," and the size scaling for objects.<br>
-Colin Klein - Created and designed the level and environment as well as assisted with some of the scripting.<br>
-Hunter Pope - Created much of the alarm sequence and breakable object scripting as well as the testing and placing behind each.<br>
+Caden Thompson (Nedac23) - Created the hand tracking features as well as the teleportation, "blaster," and the size scaling for objects.<br>
+Colin Klein (Muffin) - Created and designed the level and environment as well as assisted with some of the scripting.<br>
+Hunter Pope (CoolCelary) - Created much of the alarm sequence and breakable object scripting as well as the testing and placing behind each.<br>
