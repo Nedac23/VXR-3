@@ -15,6 +15,7 @@ TagManager:
   - TV
   - Exit
   - TimerCue
+  - blob
   layers:
   - Default
   - TransparentFX

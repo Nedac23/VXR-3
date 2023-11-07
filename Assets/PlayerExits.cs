@@ -24,6 +24,7 @@ public class PlayerExits : MonoBehaviour
         if (collision.gameObject.CompareTag("PowerObject"))
         {
             timer_script.enabled = false;
+            this.enabled = false;
         }
     }
 }

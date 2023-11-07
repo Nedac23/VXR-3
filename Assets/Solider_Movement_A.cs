@@ -53,7 +53,7 @@ public class Solider_Movement_A : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.transform.position) < followdistance)
             {
-
+                anim.SetBool("Aiming", true);
                 turn = true;
                 //zero Y vector
                 Vector3 targetDirection = target.transform.position - transform.position;

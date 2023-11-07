@@ -14,6 +14,7 @@ public class TimerCue : MonoBehaviour
     private AudioSource alarmaudio;
     public bool stoppedAudio = false;
     private bool nukeExploded = false;
+    private GameObject blob;
 
     void Start()
     {
@@ -22,6 +23,10 @@ public class TimerCue : MonoBehaviour
         bool_script = window.GetComponent<BreakableWindow>();
         exitTrigger = GameObject.FindWithTag("Exit");
         alarmaudio = AlarmLight.GetComponent<AudioSource>();
+        blob = GameObject.FindWithTag("blob");
+        blob.GetComponent<MeshRenderer>().enabled = false;
+
+
     }
 
     void Update()
@@ -49,6 +54,9 @@ public class TimerCue : MonoBehaviour
             {
                 nukeExploded = true;
                 Nuke.Play();
+                //GameObject.Find("Cube").GetComponent().enabled = false;
+                // blob.GetComponent().enabled = true;
+                blob.GetComponent<MeshRenderer>().enabled = true;
             }
         }
         
