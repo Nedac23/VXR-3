@@ -16,6 +16,7 @@ TagManager:
   - Exit
   - TimerCue
   - blob
+  - AlarmParent
   layers:
   - Default
   - TransparentFX
